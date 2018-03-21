@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:registerEvent name="PhoneNumberEvent" type="c:PhoneNumberEvent"/>
+    <ui:inputPhone aura:id="phone" label="phone" />
+    <ui:button label="Show Phone" />
+    
+    
+    
+     <!-- Add the event handlers -->
+     <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+     <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+
+    <!-- Include spinner and other component markup -->
+    <center><ui:spinner aura:id="spinner"/></center>
+</aura:component>

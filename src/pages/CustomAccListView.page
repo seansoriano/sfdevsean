@@ -1,0 +1,26 @@
+<!-- Page: -->
+
+<apex:page controller="dataTableCon" id="thePage">
+
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockTable value="{!accounts}" var="account" id="accTable">
+				<apex:column headerValue="Name">
+					<apex:inputField value="{!account.Name}" rendered="{!account.Name == ''}"/>
+					<apex:outputText value="{!account.Name}" label="Name" rendered="{!account.Name != null}"/>
+				</apex:column>
+				<apex:column headerValue="Phone">
+					<apex:inputField value="{!account.Phone}" rendered="{!account.Phone == ''}"/>
+					<apex:outputText value="{!account.Phone}" label="Name" rendered="{!account.Phone != null}"/>
+				</apex:column>
+				<apex:column headerValue="Delete">
+					<apex:commandButton value="Delete" action="{!delAcc}" rerender="accTable">
+						<apex:param name="deleteAcc" value="{!account.id}" assignTo="{!accId}"/>
+					</apex:commandButton>
+				</apex:column>
+			</apex:pageBlockTable>
+			 <apex:commandButton value="Add rows" action="{!addRow}" rerender="accTable"/> 
+			 <apex:commandButton value="Save" action="{!saveAccts}"/>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,18 @@
+<aura:component controller="FeaturedArticlesController">
+   <aura:attribute name="articles" type="List" />
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <ltng:require styles="/resource/SLDS0122/assets/styles/salesforce-lightning-design-system-ltng.css" />
+    <div class="slds">
+        
+            <table class="slds-table slds-table--bordered slds-table--striped">
+                <aura:iteration items="{!v.articles}" var="art" >
+                    <tr>
+                        <td>
+                        {!art.Title}
+                            </td>
+                    </tr>
+                </aura:iteration>
+            </table>
+        
+    </div>
+</aura:component>

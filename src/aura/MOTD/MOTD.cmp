@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:attribute name="DayOfTheWeek" type="string"/>
+    
+    
+    <aura:if isTrue="{!v.DayOfTheWeek == 'Monday'}"> 
+        <aura:text value="{! 'Today is ' + v.DayOfTheWeek}"/>
+    </aura:if>
+    
+    
+</aura:component>

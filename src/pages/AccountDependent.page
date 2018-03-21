@@ -1,0 +1,7 @@
+<apex:page standardController="Account"> 
+    
+    <apex:form >
+        <apex:inputField value="{!Account.Rating}"/>
+        <apex:inputField value="{!Account.Dependent__c}"/>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,20 @@
+<apex:page standardController="Opportunity" >
+  <apex:form >
+      <apex:pageBlock >
+      <apex:PageblockSection columns="1">
+        <apex:PageBlockSectionItem >
+          <apex:outputLabel value="Stage" />
+      
+          
+            <apex:inputField value="{!Opportunity.StageName}">
+              <apex:actionSupport event="onchange" reRender="out" /> </apex:inputField>
+          
+        </apex:PageBlockSectionItem>
+      </apex:PageblockSection>
+      
+      <apex:outputPanel id="out" >
+        <apex:outputText rendered="{!Opportunity.StageName == 'Prospecting'}">"OUT"</apex:outputText>
+      </apex:outputPanel>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>
