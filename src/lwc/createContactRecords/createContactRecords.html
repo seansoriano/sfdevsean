@@ -1,0 +1,15 @@
+<template>
+	<template for:each={contactCollection} for:item="item" for:index="index">
+
+		<div key={item.uid}>
+
+			<c-contact-record contact-record={item} oninputchange={handleChange}>
+			</c-contact-record>
+
+			{item.FirstName}
+
+		</div>
+
+	</template>
+    
+</template>
